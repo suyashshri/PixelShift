@@ -2,16 +2,16 @@ declare type CreateUserParams = {
   clerkId: string;
   email: string;
   username: string;
-  firstName: string;
-  lastName: string;
-  photo: string;
+  firstName: string | null;
+  lastName: string | null;
+  photo: string | null;
 };
 
 declare type UpdateUserParams = {
   username: string;
-  firstName: string;
-  lastName: string;
-  photo: string;
+  firstName: string | null;
+  lastName: string | null;
+  photo: string | null;
 };
 
 declare type AddImageParams = {
