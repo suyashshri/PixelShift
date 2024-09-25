@@ -14,7 +14,10 @@ const SideBar = () => {
     <aside className="sidebar">
       <div className="flex flex-col gap-4 size-full">
         <Link href="/" className="sidebar-logo">
-          <Image src="/logo.png" alt="logo" width={180} height={28} />
+          <Image src="/logo-icon.png" alt="logo" width={28} height={18} />
+          <span className="flex justify-center text-blue-600 font-bold text-3xl">
+            PixelShift
+          </span>
         </Link>
 
         <nav className="sidebar-nav">

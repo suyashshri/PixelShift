@@ -21,7 +21,7 @@ declare type AddImageParams = {
     transformationType: string;
     width: number;
     height: number;
-    config: any;
+    // config: any;
     secureURL: string;
     transformationURL: string;
     aspectRatio: string | undefined;
@@ -34,13 +34,13 @@ declare type AddImageParams = {
 
 declare type UpdateImageParams = {
   image: {
-    _id: string;
+    id: string;
     title: string;
     publicId: string;
     transformationType: string;
     width: number;
     height: number;
-    config: any;
+    // config: any;
     secureURL: string;
     transformationURL: string;
     aspectRatio: string | undefined;

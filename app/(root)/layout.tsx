@@ -1,4 +1,5 @@
 import SideBar from "@/components/shared/SideBar";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function Layout({
   children,
@@ -11,6 +12,7 @@ export default function Layout({
       <div className="root-container">
         <div className="wrapper">{children}</div>
       </div>
+      <Toaster />
     </main>
   );
 }

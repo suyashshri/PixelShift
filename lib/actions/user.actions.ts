@@ -1,6 +1,8 @@
-import { error } from "console";
+"use server";
+
 import prisma from "../db";
 import { revalidatePath } from "next/cache";
+import { handleError } from "../utils";
 
 //Create
 export async function createUser(user: CreateUserParams) {
@@ -72,5 +74,27 @@ export async function deleteUser(clerkId: string) {
   } catch (error) {
     console.error(error);
     throw new Error(`Error: ${error}`);
+  }
+}
+
+//USE Credits
+export async function updateCredits(userId: string, creditFee: number) {
+  try {
+    console.log(userId, creditFee);
+
+    const updateUserCredits = await prisma.user.update({
+      where: {
+        id: parseInt(userId),
+      },
+      data: {
+        creditBalance: {
+          increment: creditFee,
+        },
+      },
+    });
+
+    if (!updateUserCredits) throw new Error("User credits update failed");
+  } catch (error) {
+    handleError(error);
   }
 }

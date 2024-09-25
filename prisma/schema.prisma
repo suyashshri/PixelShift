@@ -18,13 +18,14 @@ model ImageSchema {
   title              String
   transformationType String
   publicId           String
-  secureUrl          String
+  secureURL          String
   width              Int?
   height             Int?
-  transformationUrl  String?
+  transformationURL  String?
   aspectRatio        String?
   color              String?
   prompt             String?
+  config             String?
   author             User     @relation(fields: [authorId], references: [id])
   authorId           Int
   createdAt          DateTime @default(now())
